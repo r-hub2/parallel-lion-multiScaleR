@@ -1,0 +1,81 @@
+#' Example data frame
+#'
+#' Example count data to be used for optimizing scales of effect
+#'
+#' @name count_data
+#' @usage data(count_data)
+#' @format A data frame with 75 rows and 2 columns. Data were simulated from a Poisson distribution with an intercept of 0.5, a `hab` effect of 0.75, and scale of effect (sigma) of 75.
+#' \describe{
+#'   \item{y}{   --> Simulated counts at spatial locations}
+#'   \item{hab}{ --> Scaled and centered weighted mean values from the `hab` raster at each of the `pts`}
+#' }
+NULL
+
+#' Example data frame
+#'
+#' Example count data to be used vignette document example
+#'
+#' @name landscape_counts
+#' @usage data(landscape_counts)
+#' @format A data frame with 100 rows and 2 columns. Data were simulated from a Poisson distribution with an intercept of 0.25; land1 effect = -0.5; site effect = 0.3; land2 effect = 0.7. True simulated Gaussian scale effects (sigma): land1 = 250; land2 = 500. For use with package vignette.
+#' \describe{
+#'   \item{counts}{ --> Simulated counts at spatial locations}
+#'   \item{site}{   --> A habitat variable measured at the site}
+#' }
+NULL
+
+#' Spatial sample points
+#'
+#' Example point file for optimizing scales of effect
+#'
+#' @name pts
+#' @usage data(pts)
+#' @format An sf class point object:
+#' \describe{
+#'   \item{pts}{ --> spatial location of points}
+#' }
+NULL
+
+#' Spatial sample points
+#'
+#' Example point file for use with vignette document example
+#'
+#' @name surv_pts
+#' @usage data(surv_pts)
+#' @format An sf class point object:
+#' \describe{
+#'   \item{pts}{ --> 100 spatial point locations}
+#' }
+NULL
+
+#' Example raster
+#'
+#' Example habitat raster for optimizing scales of effect
+#'
+#' @name hab
+#' @examples
+#' hab <- terra::rast(system.file("extdata",
+#'                    "hab.tif", package = 'multiScaleR'))
+#' @format A binary SpatRaster object
+#' \describe{
+#'   \item{hab}{ --> A binary raster}
+#' }
+NULL
+
+#' Simulated raster
+#'
+#' Raster data for use with vignette example
+#'
+#' @format `landscape_rast`
+#' @name landscape
+#' @examples
+#' land_rast <- terra::rast(system.file("extdata",
+#'                          "landscape.tif", package = 'multiScaleR'))
+#'
+#' @format A spatRaster object with three surfaces:
+#' \describe{
+#'   \item{land1}{ --> A binary landscape surface with low autocorrelation}
+#'   \item{land2}{ --> A continuous landscape surface with low autocorrelation}
+#'   \item{land3}{ --> A continuous landscape surface with high autocorrelation}
+#' }
+NULL

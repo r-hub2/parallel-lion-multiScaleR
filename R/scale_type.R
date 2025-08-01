@@ -1,0 +1,42 @@
+#' @title Scale Function
+#' @description Scaling function to be applied to rasters
+#' @param d Vector of distances
+#' @param kernel Kernel function to be used ('gaussian', 'exp', 'fixed', 'expow'; Default: 'gaussian')
+#' @param sigma Scaling parameter
+#' @param shape Shape parameter if using exponential power kernel
+#' @param r_stack.df Dataframe values extracted from rasters
+#' @param output If NULL, a vector of weights is returned, otherwise a weighted raster values are returned, Default: NULL
+#' @return A vector of weights or vector of weighted raster values
+#' @details DETAILS
+#' @examples
+#' ### TO BE COMPLETED ###
+#' @rdname scale_type
+#' @keywords internal
+
+scale_type <- function(d,
+                       kernel = c('gaussian', 'exp', 'expow', 'fixed'),
+                       sigma,
+                       shape = NULL,
+                       r_stack.df = NULL,
+                       output = NULL) {
+  kernel <- match.arg(kernel)
+
+  if(!is.null(r_stack.df)){
+    out <- scale_type_sparse(d = d,
+                             kernel = kernel,
+                             sigma_ = sigma,
+                             shape_ = shape,
+                             r_stack_df = r_stack.df,
+                             output = output)
+  } else {
+    out <- scale_type_sparse(d = d,
+                             kernel = kernel,
+                             sigma_ = sigma,
+                             shape_ = shape,
+                             r_stack_df = r_stack.df,
+                             output = output)
+  }
+
+
+  return(out)
+}

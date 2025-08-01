@@ -1,0 +1,141 @@
+multiScaleR 0.4.2
+---------
+* Update dependencies to pass CRAN checks
+* Added hex sticker
+* Added `rhub.yaml`
+* Updated to pass CRAN checks
+
+multiScaleR 0.4.1-2
+---------
+* Updated vignette to demonstrate fitting of zero-inflated model
+
+multiScaleR 0.4.1-1
+---------
+* Updated `aic_tab` and `bic_tab` to properly check model types.
+* Fixed bug in `kernel_scale.raster`
+
+multiScaleR 0.4.1-0
+---------
+* Updated calculation of cumulative distance
+* Added marginal effects plot function `plot_marginal_effect`
+* Updated `kernel_scale.raster`
+
+multiScaleR 0.4.0-1
+---------
+* Updated `sim_rast` for efficiency. Uses custom fft
+
+multiScaleR 0.4.0-0
+---------
+* Incorporated scaling & centering `kernel_scale.raster`
+* `scale_opt` is now deprecated in `kernel_scale.raster`; replaced with `multiScaleR` argument.
+* Updated package data file structure
+* Passes CRAN checks
+
+multiScaleR 0.3.1-4
+---------
+* Updates to better generalize across model classes
+
+multiScaleR 0.3.1-3
+---------
+* Updated parallel processing handling to generalize use across model classes
+
+multiScaleR 0.3.1-2
+---------
+* Updated default `pct_wt` from 0.95 to 0.975 when smoothing raster layers
+* Fixed kernel_scale.raster error handling
+
+multiScaleR 0.3.1-1
+---------
+* Fixed bug in raster smoothing
+* Added na.rm argument
+
+multiScaleR 0.3.1-0
+---------
+* Implemented fft smoothing of rasters
+* Removed NLMR and RandomFields dependencies
+
+multiScaleR 0.3.0-5
+---------
+* Fixed bug causing optimization failure if only a single spatial covariate was used.
+
+multiScaleR 0.3.0-4
+---------
+* Updated documentation and created a PSOCK variable to force PSOCK cluster when using unix
+
+multiScaleR 0.3.0-3
+---------
+* Updated variable checks of `multiScale_optim`
+* Removed use of `method` and `opt_parallel` variables. Method is always 'L-BFGS-B` and if cores > 1 is specified, parallelization is implicit.
+
+multiScaleR 0.3.0-2
+---------
+* Uses sparse matrices for reduced memory demands
+
+multiScaleR 0.3.0-1
+---------
+* Updated kernel density functions to c++ for speed
+
+multiScaleR 0.2.0-8
+---------
+* Updated parallelization to use forking when operating on a Unix OS
+* Updated DESCRIPTION file to reflect necessary dependencies
+
+multiScaleR 0.2.0-7
+---------
+* Updated simulation function to create repeat sampling data
+* Updated vignette to demonstrate use of `multiScaleR` with `unmarked`.
+
+multiScaleR 0.2.0-6
+---------
+* Bug fixes
+* Added 'join_by' command when optimizing `unmarked` models with stacked data formats
+
+multiScaleR 0.2.0-3
+---------
+* Updated error handling across core functions
+
+multiScaleR 0.2.0-2
+---------
+* Fixed bug preventing optimization using unmarked models
+
+multiScaleR 0.2.0-1
+---------
+* Modified formatting of vignette document
+
+multiScaleR 0.2.0
+---------
+* Modified `multiScaleR_optim` to reduce size of final optimized object.
+* Completed vignette: use 'build_vignettes = TRUE' when installing
+* Updated code to accomodate lme4 and other model classes supported by `insight` package.
+
+multiScaleR 0.1.5
+---------
+* Updated plot function to show 95% confidence interval of scale of effect distance
+* Updated summary function to report mean and 95% scale of effect distance
+* Updated example data included with package to demonstrate more extensive use of package
+* Future addition -- A vignette demonstrating the use of the package
+
+multiScaleR 0.1.4
+---------
+* Cleaned code
+* Added documentation and examples to `multiScale_optim`
+
+multiScaleR 0.1.3
+---------
+* Corrected issue with distance weighting function
+* Updated how parameters are scaled
+
+multiScaleR 0.1.2
+---------
+* Fixed bug in optimization function
+
+
+multiScaleR 0.1.1
+---------
+* Fixed trap that was causing optimization with 'fixed' and 'expow' to fail
+* Updated plot and kernel_dist functions
+
+
+multiScaleR 0.1.0
+---------
+* Initial commit. Bugs and issues present, needed for class
