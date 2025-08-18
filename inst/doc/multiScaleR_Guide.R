@@ -390,11 +390,11 @@ dat <- data.frame(cnt = obs.zinb,
                   kernel_out$kernel_dat)
 with(dat, plot(cnt ~ bin1))
 
-## ----echo=FALSE---------------------------------------------------------------
+## -----------------------------------------------------------------------------
 library(pscl)
-zinb_mod <- zeroinfl(cnt ~ bin1 | cont1,
-                     dist = 'negbin',
-                     data = dat)
+zinb_mod <- pscl::zeroinfl(cnt ~ bin1 | cont1,
+                           dist = 'negbin',
+                           data = dat)
 
 kernel_inputs <- kernel_prep(pts = pts,
                              kernel = kernel,

@@ -1,7 +1,7 @@
 Package: multiScaleR
 Type: Package
 Title: Package for Optimizing Scales of Effect
-Version: 0.4.2
+Version: 0.4.4
 Description: A tool for optimizing scales of effect when modeling ecological processes in space. Specifically, the scale parameter of a distance-weighted kernel distribution is identified for all environmental layers included in the model.
 License: GPL-3
 Encoding: UTF-8
@@ -21,7 +21,7 @@ Authors@R:
     person("Bill", "Peterman", , "Peterman.73@osu.edu", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0001-5229-9268"))
 NeedsCompilation: yes
-Packaged: 2025-08-01 19:32:26 UTC; peterman.73
+Packaged: 2025-08-18 13:31:32 UTC; peterman.73
 Author: Bill Peterman [aut, cre] (ORCID:
     <https://orcid.org/0000-0001-5229-9268>)
 Maintainer: Bill Peterman <Peterman.73@osu.edu>
