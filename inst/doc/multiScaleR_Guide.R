@@ -80,7 +80,8 @@ plot(pts, add = T, pch = 19)
 kernel_inputs <- kernel_prep(pts = pts,
                              raster_stack = land_rast,
                              max_D = 1700,
-                             kernel = 'gaussian')
+                             kernel = 'gaussian',
+                             verbose = FALSE)
 kernel_inputs
 
 ## -----------------------------------------------------------------------------
@@ -106,7 +107,6 @@ summary(opt1)
 mod0_2 <- glm(counts ~ site + land1 + land2,
               family = poisson(),
               data = df)
-
 
 ## ----eval=FALSE---------------------------------------------------------------
 # ## Optimize
@@ -136,19 +136,22 @@ plot(rast_opt)
 exp_inputs <- kernel_prep(pts = pts,
                           raster_stack = land_rast,
                           max_D = 1700,
-                          kernel = 'exp')
+                          kernel = 'exp',
+                          verbose = FALSE)
 
 ## Exponential Power
 expow_inputs <- kernel_prep(pts = pts,
                             raster_stack = land_rast,
                             max_D = 1700,
-                            kernel = 'expow')
+                            kernel = 'expow',
+                            verbose = FALSE)
 
 ## Fixed width buffer
 fixed_inputs <- kernel_prep(pts = pts,
                             raster_stack = land_rast,
                             max_D = 1700,
-                            kernel = 'fixed')
+                            kernel = 'fixed',
+                            verbose = FALSE)
 
 ## ----eval=FALSE---------------------------------------------------------------
 # opt_exp <- multiScale_optim(fitted_mod = mod0_2,
@@ -245,7 +248,8 @@ library(unmarked)
 kernel_inputs <- kernel_prep(pts = s_dat$pts,
                              raster_stack = rs,
                              max_D = 550,
-                             kernel = 'gaus')
+                             kernel = 'gaus',
+                             verbose = FALSE)
 
 umf <- unmarkedFramePCount(y = s_dat$y,
                            siteCovs = kernel_inputs$kernel_dat)
@@ -275,7 +279,7 @@ rast_scale.center <- kernel_scale.raster(raster_stack = rs,
                                          multiScaleR = opt_umf.p,
                                          scale_center = TRUE,
                                          clamp = TRUE,
-                                         pct_mx = 0.05)
+                                         pct_mx = 0.00)
 
 plot(rast_scale.center)
 
@@ -306,7 +310,8 @@ plot(s_dat.occ$df$y ~ s_dat.occ$df$cont2)
 kernel_inputs <- kernel_prep(pts = s_dat.occ$pts,
                              raster_stack = rs,
                              max_D = 800,
-                             kernel = 'gaus')
+                             kernel = 'gaus',
+                             verbose = FALSE)
 
 ## Occupancy frame
 umf <- unmarkedFrameOccu(y = s_dat.occ$y,
@@ -330,7 +335,7 @@ plogis(opt_umf.occ$opt_mod@estimates@estimates$det@estimates[[1]])
 rast_scale.center <- kernel_scale.raster(raster_stack = rs,
                                          multiScaleR = opt_umf.occ,
                                          scale_center = TRUE,
-                                         clamp = F)
+                                         clamp = T)
 plot(rast_scale.center)
 
 occ.mod_pred <- terra::predict(rast_scale.center, 
@@ -370,7 +375,8 @@ kernel_out <- kernel_prep(pts = pts,
                           raster_stack = rs,
                           max_D = 1500,
                           kernel = kernel,
-                          sigma = sigma)
+                          sigma = sigma,
+                          verbose = FALSE)
 
 ## ZINB simulation
 zi_prob <- plogis(zi_alpha + zi_beta*kernel_out$kernel_dat$cont1)
@@ -399,7 +405,8 @@ zinb_mod <- pscl::zeroinfl(cnt ~ bin1 | cont1,
 kernel_inputs <- kernel_prep(pts = pts,
                              kernel = kernel,
                              max_D = 1500,
-                             raster_stack = rs)
+                             raster_stack = rs,
+                             verbose = FALSE)
 
 ## ----eval=FALSE---------------------------------------------------------------
 # zinb_opt <- multiScale_optim(zinb_mod,
@@ -486,9 +493,8 @@ sim_mod <- glm(y ~ bin1 + cont2,
 kernel_inputs <- kernel_prep(pts = s_dat$pts,
                              raster_stack = r_sim1,
                              max_D = 1500,
-                             kernel = 'gaussian')
-
-
+                             kernel = 'gaussian',
+                             verbose = FALSE)
 
 ## ----eval=FALSE---------------------------------------------------------------
 # sim_opt <- multiScale_optim(fitted_mod = sim_mod,
