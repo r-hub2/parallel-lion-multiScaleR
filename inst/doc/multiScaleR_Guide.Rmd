@@ -99,7 +99,7 @@ There are *many* different kernel transformations that could be used to quantify
 
 # Preparing Data
 
-Prior to using `multiScaleR` to identify distance-weighted scales of effect, data must be appropriately formatted. These steps will be demonstrated with sample, simulated data provided with the package.
+Prior to using `multiScaleR` to identify distance-weighted scales of effect, data must be appropriately formatted. These steps will be demonstrated with simulated data provided with the package.
 
 ```{r}
 library(multiScaleR)
@@ -607,7 +607,7 @@ kernel_inputs <- kernel_prep(pts = pts,
                              verbose = FALSE)
 ```
 
-**NOTE: It is highly encouraged to fit your model as `pscl::zeroinfl`. **
+**NOTE: It is highly encouraged to fit your model as `pscl::zeroinfl`.**
 
 ```{r eval=FALSE}
 zinb_opt <- multiScale_optim(zinb_mod, 
